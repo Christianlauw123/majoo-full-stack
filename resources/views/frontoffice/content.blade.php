@@ -9,14 +9,9 @@
   <div class="container">
     <h1 class="mt-5">Produk</h1>
     
-    <div class="row justify-content-center">
+    <div class="row">
         @foreach($products as $key => $product)
-        
-        @if (($key+1) % 4 == 0)
-            <div class="card" style="width: 18rem;">
-        @else
-            <div class="card" style="width: 18rem;margin-right:2.5% !important;">
-        @endif
+        <div class="card" style="width: 20rem;margin:0 auto;">
             <img src="{{asset('storage/'.$product->image_path)}}" class="card-img-top img-fluid" alt="...">
             <div class="card-body">
                 <div class="text-center">
