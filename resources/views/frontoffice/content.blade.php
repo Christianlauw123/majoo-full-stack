@@ -16,7 +16,7 @@
             <div class="card-body">
                 <div class="text-center">
                     <h5 class="card-title">{{$product->name}}</h5>
-                    <h5 class="card-title">{{number_format($product->price,0,",",".")}}</h5>
+                    <h5 class="card-title" style="margin-top:10%;">Rp {{number_format($product->price,0,",",".")}}</h5>
                 </div>
                 <p class="card-text">{!! $product->description !!}</p>
                 
