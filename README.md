@@ -19,6 +19,12 @@
 - **[Select 2 Bootstrap 5 Theme](https://github.com/apalfrey/select2-bootstrap-5-theme)**
 - **[File Upload Progress Bar](http://talkerscode.com/webtricks/file-upload-progress-bar-using-jquery-and-php.php)**
 
+## Note
+
+- [run php artisan storage:link, jika diperlukan atau image bermasalah]
+- [run php artisan db:seed, untuk seed user, dengan email: **admin1@mail.com** dan password: **12345**]
+- [backup database majoo-full-stack.sql (MySQL)]
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
