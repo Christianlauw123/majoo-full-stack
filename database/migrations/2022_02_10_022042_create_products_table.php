@@ -24,7 +24,6 @@ return new class extends Migration
             $table->timestamps();
 
             $table->index(['name']);
-            $table->index(['description']);
             $table->index(['price']);
             $table->index(['product_category_id']);
             

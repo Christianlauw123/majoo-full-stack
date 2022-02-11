@@ -82,8 +82,8 @@ class ProductController extends Controller
 
             if ($request->hasFile('image_path')){
                 $extension = $request->file('image_path')->getClientOriginalExtension();
-                $path = $request->file('image_path')->storeAs('public/product_image', time().'_'.$extension);
-                $product->image_path  = 'product_image/'.time().'_'.$extension;
+                $path = $request->file('image_path')->storeAs('public/product_image', time().'.'.$extension);
+                $product->image_path  = 'product_image/'.time().'.'.$extension;
             }
             
             $product->product_category_id = $request->product_category_id;
@@ -163,8 +163,8 @@ class ProductController extends Controller
             //Rubah Filenya jika ada
             if ($request->hasFile('image_path')){
                 $extension = $request->file('image_path')->getClientOriginalExtension();
-                $path = $request->file('image_path')->storeAs('public/product_image', time().'_'.$extension);
-                $product->image_path  = 'product_image/'.time().'_'.$extension;
+                $path = $request->file('image_path')->storeAs('public/product_image', time().'.'.$extension);
+                $product->image_path  = 'product_image/'.time().'.'.$extension;
             }
 
             $product->product_category_id = $request->product_category_id;
@@ -203,9 +203,9 @@ class ProductController extends Controller
                 return redirect('/products')->with('warning', 'Produk Tidak ditemukan');
             $image_path = $product->image_path;
             $product->delete();
-            DB::commit();
-
-            Storage::delete($image_path);
+            // DB::commit();
+            // dd($image_path);
+            Storage::delete('public/'.$image_path);
 
             return redirect('/products')->with('success', 'Success Delete Produk');
         }catch(Exception $e){
